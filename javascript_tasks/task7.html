@@ -1,0 +1,50 @@
+<html>   
+   <head>
+      <title>JavaScript Animation</title>      
+      <style>
+        #image{
+            height:200px;
+            width: 200px;
+        }
+        p{
+            text-align: center;
+            color:darkblue;
+            font-weight: bold;
+            font-size: large;
+        }
+        #button{
+            text-align: center;
+        }
+      </style>
+          <script type = "text/javascript">
+            var imgObj = null;
+            var animate ;
+               
+            function init() {
+               imgObj = document.getElementById('image');
+               imgObj.style.position= 'relative'; 
+               imgObj.style.left = '0px'; 
+            }
+            function moveRight() {
+               imgObj.style.left = parseInt(imgObj.style.left) + 10 + 'px';
+               animate = setTimeout(moveRight,20);    
+            }
+            function stop() {
+               clearTimeout(animate);
+               imgObj.style.left = '0px'; 
+            }
+            
+            window.onload = init;
+         </script> 
+   </head>
+   
+   <body>   
+      <form>
+         <img id = "image" src = "train.jpg" />
+         <p>Click the buttons below to handle animation</p>
+         <p id="button"><input type = "button" value = "Start" onclick = "moveRight();" />
+         <input type = "button" value = "Stop" onclick = "stop();" /></p>
+      </form> 
+      
+   </body>
+</html>

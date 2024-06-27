@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label>Enter string : </label><input type="text" id="str"><br>
+    <input type="button" onClick="alpha()" value="Alphabetical order">
+    <p>The Result is : <br>
+        <span id="result"></span>
+    </p>
+    
+    <script>
+       function alpha()
+        {
+            str=document.getElementById("str").value;
+        let rev =str.split("").sort().join("");
+        document.getElementById(
+        "result").innerHTML = rev;
+        }
+    </script>
+</body>
+</html>
